@@ -10,7 +10,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.png" />
   <link rel="icon" type="image/png" href="favicon.png" />
 
-  <link rel="stylesheet" href="http://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/themes/css/cartodb.css" />
+  <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/themes/css/cartodb.css" />
   <link rel="stylesheet" href="css/slides.css" />
   <style>
 
@@ -189,7 +189,7 @@
     <span class="author"><strong id="author">By Name using</strong> <a href="http://cartodb.github.io/odyssey.js/">Odyssey.js</a><span>
   </div>
 
-  <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+  <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
   <script src="../dist/odyssey.js" charset="UTF-8"></script>
 
   <script>
@@ -270,9 +270,7 @@
     O.Template({
       init: function() {
                 console.log("init");
-console.log(1);
         var seq = O.Triggers.Sequential();
-console.log(2);
         var baseurl = this.baseurl = 'http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png';
         var map = this.map = L.map('map').setView([0, 0.0], 4);
         var basemap = this.basemap = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
@@ -294,15 +292,11 @@ console.log(2);
         this.seq = seq;
         this.slides = slides;
         this.progress = O.UI.DotProgress('dots').count(0);
-      console.log(6);
 
       },
 
       update: function(actions) {
         var self = this;
-  console.log("update");
-  console.log(actions.global);
-              console.log(this.baseurl);
 
         if (!actions.length) return;
 
@@ -312,7 +306,6 @@ console.log(2);
           this.baseurl = actions.global.baseurl || 'http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png';
 
           this.basemap.setUrl(this.baseurl);
-            console.log(this.baseurl);
 
         }
         // hhn: remove restriction for non namednames,
@@ -322,12 +315,10 @@ console.log(2);
 
           this.cartoDBLayer = null;
           this.created = false;
-                      console.log(2);
 
         }
 
         if (actions.global.vizjson && !this.cartoDBLayer) {
-          console.log(3);
           if (!this.created) { // sendCode debounce < vis loader
             cdb.vis.Loader.get(actions.global.vizjson, function(vizjson) {
               self.map.fitBounds(vizjson.bounds);
@@ -414,6 +405,9 @@ console.log(2);
       }
     });
   </script>
+      <script  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 <script>
     var iuc_desc = {
   "Novice Users": "This group represents areas where the majority of people have limited or no interaction with the Internet. They are most likely located outside city centres and close to the suburbs or semi-rural areas. The underlying population are fairly average in characteristics, albeit with higher levels of people less skilled and working in blue-collar occupations. People living within these areas are rarely online, and most commonly only reporting use of once a week or less. The probability of having access to broadband is as expected well below average, and for those online, there is mild preference for access via their smartphones. While engagement is limited, the Internet is typically used for online shopping, gaming or social networks. ",
@@ -435,9 +429,7 @@ console.log(2);
         $("#subinfobox").show();
       });
     </script> 
-    <script  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+
   
 </body>
 </html>
