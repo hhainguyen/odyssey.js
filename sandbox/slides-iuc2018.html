@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Odyssey.js Slides</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/x-icon" href="favicon.png" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <link rel="stylesheet" href="http://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/themes/css/cartodb.css" />
+  <link rel="stylesheet" href="css/slides.css" />
+  <style>
+
+
+
+#infobox {
+    border:1px black;
+    bottom:50px;
+    left:50px;
+    background-color:rgba(255,255,255,0.7);
+    padding: .5em 1em;
+    width:310px;
+    height:auto;
+     position:absolute;
+     z-index: 5;
+     font-family:AleoRegular, Serif;
+     color:#333;
+     font-size:15px;
+     line-height:21px;
+     margin:0 0 19px 0;}
+
+#subinfobox {
+    border:1px dashed black;
+    bottom:50px;
+    left:400px;
+    background-color:rgba(255,255,255,0.7);
+   font-family:AleoRegular, Serif;
+     color:#333;
+     line-height:21px;
+     margin:0 0 19px 0;
+    padding: 1em 1em;
+    width:300px;
+    height:auto;
+     position:absolute;
+     z-index: 5;
+     display:none;
+}
+.smallbox {
+    float: left;
+  width: 15px;
+  height: 15px;
+  margin-right:5px;
+
+  border: 0px solid rgba(0, 0, 0, .5);
+   z-index: 5;
+   position:relative;
+
+
+}
+
+
+    </style>
+  <script src="../vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+  <div id="map" style="width: 100%; height: 100%;"></div>
+
+<div id="infobox"><h2 style="font-size:1.2em; font-weight:bold;" >
+ Internet User Classification 2018
+</h2>
+
+
+<div ><div class="CDB-Legend-item" style="display: block;"><ul>
+  
+    <li >
+      
+        <span  class="smallbox" style=" opacity: 1 ; background: #d94636"></span>
+      
+
+      <p class="legendtext" title="e-Cultural Creators">e-Cultural Creators</p>
+    </li>
+  
+    <li >
+      
+        <span    class="smallbox" style=" opacity: 1 ;background: #e4ab46"></span>
+      
+
+      <p class="legendtext" title="e-Experts">e-Experts</p>
+    </li>
+  
+    <li >
+      
+        <span class="smallbox" style="  opacity: 1 ; background: #f26f79"></span>
+      
+
+      <p class="legendtext" title="e-Professionals">e-Professionals</p>
+    </li>
+  
+    <li >
+      
+        <span class="smallbox" style="  opacity: 1 ; background: #b46656"></span>
+      
+
+      <p class="legendtext" title="Young and Uncommitted">Young and Uncommitted</p>
+    </li>
+  
+    <li >
+      
+        <span class="smallbox" style="  opacity: 1 ; background: #17becf"></span>
+      
+
+      <p class="legendtext" title="e-Mix">e-Mix</p>
+    </li>
+  
+    <li >
+      
+        <span class="smallbox" style="  opacity: 1 ; background: #7ec4bf"></span>
+      
+
+      <p class="legendtext" title="Constrained by Infrastructure">Constrained by Infrastructure</p>
+    </li>
+  
+    <li >
+      
+        <span class="smallbox" style="  opacity: 1 ; background: #2f8ac4"></span>
+      
+
+      <p class="legendtext" title="Novice Users">Novice Users</p>
+    </li>
+  
+    <li >
+      
+        <span class="smallbox" style="  opacity: 1 ; background: #c77db8"></span>
+      
+
+      <p class="legendtext" title="Aging Late Majorities">Aging Late Majorities</p>
+    </li>
+  
+    <li >
+      
+        <span class="smallbox" style="  opacity: 1 ; background: #a685bf"></span>
+      
+
+      <p class="legendtext" title="Elderly and Reluctant to Engage">Elderly and Reluctant to Engage</p>
+    </li>
+  
+    <li >
+      
+        <span class="smallbox" style="  opacity: 1 ; background: #504684"></span>
+      
+
+      <p class="legendtext" title="Multicultural e-Withdrawn">Multicultural e-Withdrawn</p>
+    </li>
+  
+    <li >
+      
+        <span class="smallbox" style="  opacity: 1 ; background: #5d69b1"></span>
+      
+
+      <p class="legendtext" title="Not a Necessity">Not a Necessity</p>
+    </li>
+  
+</ul>
+</div>
+
+
+</div>
+
+</div>
+<div id="subinfobox"></div>
+
+
+  <div id="slides_container" style="display:block;">
+    <div id="dots"></div>
+
+    <div id="slides"></div>
+
+    <ul id='navButtons'>
+      <li><a class='prev'></a></li>
+      <li><a class='next'></a></li>
+    </ul>
+  </div>
+
+  <div id="credits">
+    <span class="title" id="title">Title</span>
+    <span class="author"><strong id="author">By Name using</strong> <a href="http://cartodb.github.io/odyssey.js/">Odyssey.js</a><span>
+  </div>
+
+  <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+  <script src="../dist/odyssey.js" charset="UTF-8"></script>
+
+  <script>
+ 
+    var resizePID;
+
+    function clearResize() {
+      clearTimeout(resizePID);
+      resizePID = setTimeout(function() { adjustSlides(); }, 100);
+    }
+
+    if (!window.addEventListener) {
+      window.attachEvent("resize", function load(event) {
+        clearResize();
+      });
+    } else {
+      window.addEventListener("resize", function load(event) {
+        clearResize();
+      });
+    }
+
+    function adjustSlides() {
+      var container = document.getElementById("slides_container"),
+          slide = document.querySelectorAll('.selected_slide')[0];
+
+      if (slide) {
+        if (slide.offsetHeight+169+40+80 >= window.innerHeight) {
+          container.style.bottom = "80px";
+
+          var h = container.offsetHeight;
+
+          slide.style.height = h-169+"px";
+          slide.classList.add("scrolled");
+        } else {
+          container.style.bottom = "auto";
+          container.style.minHeight = "0";
+
+          slide.style.height = "auto";
+          slide.classList.remove("scrolled");
+        }
+      }
+    }
+
+    var resizeAction = O.Action(function() {
+      function imageLoaded() {
+        counter--;
+
+        if (counter === 0) {
+          adjustSlides();
+        }
+      }
+      var images = $('img');
+      var counter = images.length;
+
+      images.each(function() {
+        if (this.complete) {
+          imageLoaded.call( this );
+        } else {
+          $(this).one('load', imageLoaded);
+        }
+      });
+    });
+
+    function click(el) {
+      var element = O.Core.getElement(el);
+      var t = O.Trigger();
+
+      // TODO: clean properly
+      function click() {
+        t.trigger();
+      }
+
+      if (element) element.onclick = click;
+
+      return t;
+    }
+
+    O.Template({
+      init: function() {
+                console.log("init");
+console.log(1);
+        var seq = O.Triggers.Sequential();
+console.log(2);
+        var baseurl = this.baseurl = 'http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png';
+        var map = this.map = L.map('map').setView([0, 0.0], 4);
+        var basemap = this.basemap = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+          attribution: 'data OSM - map CartoDB'
+        }).addTo(map);
+
+
+        // enanle keys to move
+        O.Keys().on('map').left().then(seq.prev, seq)
+        O.Keys().on('map').right().then(seq.next, seq)
+
+        click(document.querySelectorAll('.next')).then(seq.next, seq)
+        click(document.querySelectorAll('.prev')).then(seq.prev, seq)
+
+        var slides = O.Actions.Slides('slides');
+        var story = O.Story()
+
+        this.story = story;
+        this.seq = seq;
+        this.slides = slides;
+        this.progress = O.UI.DotProgress('dots').count(0);
+      console.log(6);
+
+      },
+
+      update: function(actions) {
+        var self = this;
+  console.log("update");
+  console.log(actions.global);
+              console.log(this.baseurl);
+
+        if (!actions.length) return;
+
+        this.story.clear();
+
+        if (this.baseurl && (this.baseurl !== actions.global.baseurl)) {
+          this.baseurl = actions.global.baseurl || 'http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png';
+
+          this.basemap.setUrl(this.baseurl);
+            console.log(this.baseurl);
+
+        }
+        // hhn: remove restriction for non namednames,
+         // if (this.cartoDBLayer && ("http://"+self.cartoDBLayer.options.user_name+".cartodb.com/api/v2/viz/"+self.cartoDBLayer.options.layer_definition.stat_tag+"/viz.json" !== actions.global.vizjson)) {
+        if (this.cartoDBLayer){
+          this.map.removeLayer(this.cartoDBLayer);
+
+          this.cartoDBLayer = null;
+          this.created = false;
+                      console.log(2);
+
+        }
+
+        if (actions.global.vizjson && !this.cartoDBLayer) {
+          console.log(3);
+          if (!this.created) { // sendCode debounce < vis loader
+            cdb.vis.Loader.get(actions.global.vizjson, function(vizjson) {
+              self.map.fitBounds(vizjson.bounds);
+               console.log(self.map);
+              cartodb.createLayer(self.map, vizjson)
+                .done(function(layer) {
+                  self.cartoDBLayer = layer;
+
+                  var sublayer = layer.getSubLayer(0),
+                      layer_name = layer.layers[0].options.layer_name,
+                      filter = actions.global.cartodb_filter ? " WHERE "+actions.global.cartodb_filter : "";
+
+                   // sublayer.setSQL("SELECT * FROM "+layer_name+filter)
+                  self.map.addLayer(layer);
+                 var labelLayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
+          attribution: 'data OSM - map CartoDB'
+        }).addTo(self.map);
+                         labelLayer.bringToFront();
+
+                  self._resetActions(actions);
+                }
+
+          ).on('error', function(err) {
+                  console.log("some error occurred: " + err);
+                  });
+            });
+
+            this.created = true;
+          }
+
+          return;
+        }
+
+        this._resetActions(actions);
+      },
+
+      _resetActions: function(actions) {
+        // update footer title and author
+        var title_ = actions.global.title === undefined ? '' : actions.global.title,
+            author_ = actions.global.author === undefined ? 'Using' : 'By '+actions.global.author+' using';
+
+        document.getElementById('title').innerHTML = title_;
+        document.getElementById('author').innerHTML = author_;
+        document.title = title_ + " | " + author_ +' Odyssey.js';
+
+        var sl = actions;
+
+        document.getElementById('slides').innerHTML = ''
+        this.progress.count(sl.length);
+
+        // create new story
+        for(var i = 0; i < sl.length; ++i) {
+          var slide = sl[i];
+          var tmpl = "<div class='slide' style='diplay:none'>";
+
+          tmpl += slide.html();
+          tmpl += "</div>";
+          document.getElementById('slides').innerHTML += tmpl;
+
+          this.progress.step(i).then(this.seq.step(i), this.seq)
+
+          var actions = O.Parallel(
+            this.slides.activate(i),
+            slide(this),
+            this.progress.activate(i),
+            resizeAction
+          );
+
+          actions.on("finish.app", function() {
+            adjustSlides();
+          });
+
+          this.story.addState(
+            this.seq.step(i),
+            actions
+          )
+        }
+
+        this.story.go(this.seq.current());
+      },
+
+      changeSlide: function(n) {
+        this.seq.current(n);
+      }
+    });
+  </script>
+<script>
+    var iuc_desc = {
+  "Novice Users": "This group represents areas where the majority of people have limited or no interaction with the Internet. They are most likely located outside city centres and close to the suburbs or semi-rural areas. The underlying population are fairly average in characteristics, albeit with higher levels of people less skilled and working in blue-collar occupations. People living within these areas are rarely online, and most commonly only reporting use of once a week or less. The probability of having access to broadband is as expected well below average, and for those online, there is mild preference for access via their smartphones. While engagement is limited, the Internet is typically used for online shopping, gaming or social networks. ",
+  "Aging Late Majorities": "This group represents areas with ageing populations that are predominantly white British, retired and relatively affluent, however, their engagement to the Internet can be considered fairly average. When they do use the Internet, their main access method appears to be via a personal computer at home, and despite being infrequent users, they are adept enough to use the Internet for information seeking, financial services and online shopping (but less so for social networks, streaming or gaming). These areas are usually located in semi-rural and coastal regions, where infrastructure provision is limited.",
+  "Elderly and Reluctant to Engage": "This group represented areas where the majority of residents are elderly, white British and retired populations; located within semi-rural areas. This particular group however exhibits a much more limited engagement with the Internet. They have a higher than average population ratio of people without access, and for those that are engaged online they do so very infrequently. Their preferred method seems to be via a home computer and much less so using a mobile device. The limited online behaviour focuses on online shopping and information seeking, with very low participation in social network, gaming or media streaming.",
+  "Constrained by Infrastructure": "This group represents mainly rural and semi-rural areas at the city fringe. Their use of the Internet is constrained by poor levels of infrastructure; although a large number of them are experienced Internet users, and have relatively high levels of online shopping activity: particularly for groceries, which may also be a factor of limited bricks-and-mortar retail provision within these areas. The population tends to be late middle aged or elderly, and as might be expected, have a high percentage of retired individuals alongside those who own their home. The preferred method of engagement with the Internet is usually through a personal computer located at home and there is less prevalent mobile access. In terms of online behaviour, besides shopping, people within these areas use the Internet for information-seeking or online banking but less so for social networks or gaming, indicating their perception of the Internet is more that of a necessary tool than for entertainment.",
+  "Young and Uncommitted": "This group are mainly found at the periphery of city centres and are composite of high concentrations of relatively young and multicultural populations. There is a mixture of students and young urbanites living within these areas, often in shared households, that usually experience some level of material deprivation. Their level of Internet engagement is generally average, but with more inclination towards social media, communications and streaming than online shopping; they also have a relatively high proportion of population going online at a public place. Access to broadband is average, possibly due to the reduced costs of access associated with Internet sharing. ",
+  "e-Mix": "This group represents the most average profile of Internet engagement. People living within these express very close to average diversity in terms of age structure, ethnicity and household composition, indicating a mixture of socio-economic profiles. The group is usually located at the periphery of urban regions; and such areas could also represent transitional neighbourhoods. Their level of engagement is average across all attributes, characterising the typical user.",
+  "e-Experts": "The e-experts group have high levels of Internet engagement, although represent more mature populations of young urban professionals, typically aged between 25 and 34. They are experienced users and engage with the Internet daily in a variety of ways. They do some shopping online, particularly for more expensive items, and they use a variety devices and methods to access the Internet. The ethnic diversity of this group is significantly high, with a very strong presence of white, non-British populations with very high qualification levels. They also have the highest level of Internet access through their working environment. This group tend to be found at the periphery of city centres or affluent suburbs.",
+  "e-Cultural Creators": "This group has high levels of Internet engagement, particularly regarding social networks, communication, streaming and gaming, but relatively low levels of online shopping, besides groceries. They are new but very active users, with a very high proportion of the population engaging on a daily basis. The age structure of this group is young, typically aged between 18 to 24, and with a strong presence of multicultural and student populations. This group is mainly located close to the city centre where infrastructure accessibility, such as cable broadband, is sufficient. They have a well-above average ownership of laptop devices, and an above average Internet access via mobile and at public places.",
+  "Multicultural e-Withdrawn": "This group represents areas with populations of high ethnic diversity and who are some of those least engaged with the Internet. Typically located within urban areas, residents there are generally young with a well-above-average unemployment rate and experiencing some sort of material deprivation. Houses are often crowded, with multiple occupancy of 5 or more members. The groupÍs online behaviour is very limited across all attributes, except social networks and gaming (perhaps reflecting those families with children), with those still however below average. ",
+  "Not a Necessity": "This group is mainly characterised by individuals who are the least engaged with the Internet. Their geography is expressed by areas that are associated with those more deprived neighbourhoods of urban regions. The socio-economic profile of the population is characterised by less affluent white British individuals; and it has the highest rate of unemployment and social housing among all other groups. The group appears to have the highest ratio of people that only recently had access, or have access but never engage with the Internet. It also expresses the lowest rates of engagement in terms of online shopping, information seeking and financial services, as well as the lowest rate in terms of online access via a mobile device. It is possible that many people within this group have opted out of online engagement, either because it is considered unnecessary or because of economic reasons.",
+  "e-Professionals": "The e-Professionals group represents affluent families, usually located within low-density suburbs, with populations of mainly middle-aged and highly qualified professionals. They are more likely to be experienced users of the Internet and with the second highest levels of access at work after the e-Experts users. They engage with the Internet using multiple devices and in a variety of ways."
+};
+
+      $( ".legendtext" ).click(function() {
+        console.log( $( this ).html());
+        $("#subinfobox").html( "<h2><b>"+$( this ).html()+"</b></h2><br/>"+iuc_desc[$( this ).html()]);
+        $("#subinfobox").show();
+      });
+    </script> 
+    <script  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  
+</body>
+</html>
