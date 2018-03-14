@@ -19,30 +19,30 @@
 #infobox {
     border:1px black;
     bottom:50px;
-    left:50px;
+    right:50px;
     background-color:rgba(255,255,255,0.7);
     padding: .5em 1em;
-    width:310px;
+    width:350px;
     height:auto;
      position:absolute;
      z-index: 5;
      font-family:AleoRegular, Serif;
      color:#333;
-     font-size:15px;
-     line-height:21px;
+     font-size:18px;
+     line-height:30px;
      margin:0 0 19px 0;}
 
 #subinfobox {
     border:1px dashed black;
     bottom:50px;
-    left:400px;
+    right:450px;
     background-color:rgba(255,255,255,0.7);
    font-family:AleoRegular, Serif;
      color:#333;
      line-height:21px;
      margin:0 0 19px 0;
     padding: 1em 1em;
-    width:300px;
+    width:400px;
     height:auto;
      position:absolute;
      z-index: 5;
@@ -68,106 +68,170 @@
 <body>
   <div id="map" style="width: 100%; height: 100%;"></div>
 
-<div id="infobox"><h2 style="font-size:1.2em; font-weight:bold;" >
+<div id="infobox"><h2 style="font-size:1.3em; line-height: 40px; font-weight:bold;" >
  Internet User Classification 2018
 </h2>
 
 
-<div ><div class="CDB-Legend-item" style="display: block;"><ul>
+<div class="Legends js-legends"><div class="CDB-Legend-item" style="display: block;"><ul>
   
-    <li >
+    <li class="Legend-categoryListItem u-flex u-alignCenter">
       
-        <span  class="smallbox" style=" opacity: 1 ; background: #d94636"></span>
+        <span class="smallbox" style="opacity: 1 ; opacity: 1 ; background: #ea4d78"></span>
       
 
-      <p class="legendtext" title="e-Cultural Creators">e-Cultural Creators</p>
+      <p class="Legend-categoryTitle CDB-Text CDB-Size-small u-upperCase u-ellipsis" title="e-Cultural Creators">e-Cultural Creators</p>
     </li>
   
-    <li >
+    <li class="Legend-categoryListItem u-flex u-alignCenter">
       
-        <span    class="smallbox" style=" opacity: 1 ;background: #e4ab46"></span>
+        <span class="smallbox" style="opacity: 1 ; opacity: 1 ; background: #f36d5a"></span>
       
 
-      <p class="legendtext" title="e-Experts">e-Experts</p>
+      <p class="Legend-categoryTitle CDB-Text CDB-Size-small u-upperCase u-ellipsis" title="e-Expertise">e-Expertise</p>
     </li>
   
-    <li >
+    <li class="Legend-categoryListItem u-flex u-alignCenter">
       
-        <span class="smallbox" style="  opacity: 1 ; background: #f26f79"></span>
+        <span class="smallbox" style="opacity: 1 ; opacity: 1 ; background: #e4a5d0"></span>
       
 
-      <p class="legendtext" title="e-Professionals">e-Professionals</p>
+      <p class="Legend-categoryTitle CDB-Text CDB-Size-small u-upperCase u-ellipsis" title="e-Professionals">e-Professionals</p>
+
     </li>
-  
-    <li >
+
+    <li class="Legend-categoryListItem u-flex u-alignCenter">
       
-        <span class="smallbox" style="  opacity: 1 ; background: #b46656"></span>
+        <span class="smallbox" style="opacity: 1 ; opacity: 1 ; background: #ffd39b"></span>
       
 
-      <p class="legendtext" title="Young and Uncommitted">Young and Uncommitted</p>
+      <p class="Legend-categoryTitle CDB-Text CDB-Size-small u-upperCase u-ellipsis" title="Youthful Urban Fringe">Youthful Urban Fringe</p>
+
     </li>
   
-    <li >
+    <li class="Legend-categoryListItem u-flex u-alignCenter">
       
-        <span class="smallbox" style="  opacity: 1 ; background: #17becf"></span>
+        <span class="smallbox" style="opacity: 1 ; opacity: 1 ; background: #d2d1ab"></span>
       
 
-      <p class="legendtext" title="e-Mix">e-Mix</p>
-    </li>
+      <p class="Legend-categoryTitle CDB-Text CDB-Size-small u-upperCase u-ellipsis" title="e-Mainstream">e-Mainstream</p>
+
   
-    <li >
+  </li>
+    <li class="Legend-categoryListItem u-flex u-alignCenter">
       
-        <span class="smallbox" style="  opacity: 1 ; background: #7ec4bf"></span>
+        <span class="smallbox" style="opacity: 1 ; opacity: 1 ; background: #a5cfbc"></span>
       
 
-      <p class="legendtext" title="Constrained by Infrastructure">Constrained by Infrastructure</p>
+      <p class="Legend-categoryTitle CDB-Text CDB-Size-small u-upperCase u-ellipsis" title="e-Rational Utilitarians">e-Rational Utilitarians</p>
+
+  
     </li>
   
-    <li >
+    <li class="Legend-categoryListItem u-flex u-alignCenter">
       
-        <span class="smallbox" style="  opacity: 1 ; background: #2f8ac4"></span>
+        <span class="smallbox" style="opacity: 1 ; opacity: 1 ; background: #79cdcd"></span>
       
 
-      <p class="legendtext" title="Novice Users">Novice Users</p>
+      <p class="Legend-categoryTitle CDB-Text CDB-Size-small u-upperCase u-ellipsis" title="Novice Users">Novice Users</p>
     </li>
   
-    <li >
+    <li class="Legend-categoryListItem u-flex u-alignCenter">
       
-        <span class="smallbox" style="  opacity: 1 ; background: #c77db8"></span>
+        <span class="smallbox" style="opacity: 1 ; opacity: 1 ; background: #7caedd"></span>
       
 
-      <p class="legendtext" title="Aging Late Majorities">Aging Late Majorities</p>
+      <p class="Legend-categoryTitle CDB-Text CDB-Size-small u-upperCase u-ellipsis" title="Settled Offline Communities">Settled Offline Communities</p>
     </li>
   
-    <li >
+    <li class="Legend-categoryListItem u-flex u-alignCenter">
       
-        <span class="smallbox" style="  opacity: 1 ; background: #a685bf"></span>
+        <span class="smallbox" style="opacity: 1 ; opacity: 1 ; background: #808fee"></span>
       
 
-      <p class="legendtext" title="Elderly and Reluctant to Engage">Elderly and Reluctant to Engage</p>
+      <p class="Legend-categoryTitle CDB-Text CDB-Size-small u-upperCase u-ellipsis" title="Elderly and Unengaged">Elderly and Unengaged</p>
     </li>
   
-    <li >
+    <li class="Legend-categoryListItem u-flex u-alignCenter">
       
-        <span class="smallbox" style="  opacity: 1 ; background: #504684"></span>
+        <span class="smallbox" style="opacity: 1 ; opacity: 1 ; background: #8470ff"></span>
       
 
-      <p class="legendtext" title="Multicultural e-Withdrawn">Multicultural e-Withdrawn</p>
+      <p class="Legend-categoryTitle CDB-Text CDB-Size-small u-upperCase u-ellipsis" title="e-Withdrawn">e-Withdrawn</p>
     </li>
-  
-    <li >
-      
-        <span class="smallbox" style="  opacity: 1 ; background: #5d69b1"></span>
-      
+</ul></div><div class="CDB-Legend-item" style="display: none;"><h3 class="CDB-Text CDB-Size-small u-upperCase u-bSpace u-altTextColor u-ellipsis  u-alertTextColor " title="No data available">
+  No data available
+</h3>
 
-      <p class="legendtext" title="Not a Necessity">Not a Necessity</p>
-    </li>
+<div class="Legend-placeholder">
+  <div class="CDB-Loader is-visible Legend-loading"></div>
+  <div class="Legend-placeholderInner">
+    <svg width="192px" height="57px" viewBox="0 0 192 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g id="Graph" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.000000, 48.000000)">
+        <rect id="Rectangle-3147" fill="#F9F9F9" x="0" y="0" width="192" height="9" rx="4"></rect>
+      </g>
+      <rect id="Rectangle" stroke="none" fill="#F9F9F9" fill-rule="evenodd" x="0" y="29" width="18" height="9"></rect>
+      <rect id="Rectangle" stroke="none" fill="#F9F9F9" fill-rule="evenodd" x="0" y="0" width="117" height="9"></rect>
+      <rect id="Rectangle" stroke="none" fill="#F9F9F9" fill-rule="evenodd" x="169" y="29" width="23" height="9"></rect>
+    </svg>
+  </div>
+</div>
+</div><div class="CDB-Legend-item" style="display: none;"><div class="u-flex u-justifySpace u-bSpace--m">
   
-</ul>
+  <p class="CDB-Text CDB-Size-small"> </p>
+  <p class="CDB-Text CDB-Size-small"> </p>
+  
+</div>
+<div class="Legend-choropleth" style="opacity: 1 ; background: linear-gradient(90deg)"></div>
+</div><div class="CDB-Legend-item" style="display: none;"><h3 class="CDB-Text CDB-Size-small u-upperCase u-bSpace u-altTextColor u-ellipsis  u-alertTextColor " title="No data available">
+  No data available
+</h3>
+
+<div class="Legend-placeholder">
+  <div class="CDB-Loader is-visible Legend-loading"></div>
+  <div class="Legend-placeholderInner">
+    <svg width="191px" height="57px" viewBox="0 0 191 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g id="Group-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-3147" fill="#F9F9F9" x="0" y="48" width="72" height="9"></rect>
+        <rect id="Rectangle" fill="#F9F9F9" x="0" y="29" width="78" height="9"></rect>
+        <rect id="Rectangle" fill="#F9F9F9" x="0" y="0" width="117" height="9"></rect>
+        <rect id="Rectangle" fill="#F9F9F9" x="182" y="29" width="9" height="9" rx="4.5"></rect>
+        <rect id="Rectangle-Copy" fill="#F9F9F9" x="182" y="48" width="9" height="9" rx="4.5"></rect>
+      </g>
+  </svg>
+  </div>
+</div>
+</div><div class="CDB-Legend-item" style="display: none;"><h3 class="CDB-Text CDB-Size-small u-upperCase u-bSpace u-altTextColor u-ellipsis  u-alertTextColor " title="No data available">
+  No data available
+</h3>
+
+<div class="Legend-placeholder">
+  <div class="CDB-Loader is-visible Legend-loading"></div>
+  <div class="Legend-placeholderInner">
+    <svg width="191px" height="55px" viewBox="0 3 191 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g id="Graph" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.000000, 3.000000)">
+        <g id="Group-2" fill="#F9F9F9">
+          <g id="Group-3">
+            <rect id="Rectangle-3147" x="0" y="45" width="72" height="9"></rect>
+            <rect id="Rectangle-Copy-2" x="0" y="2" width="78" height="9"></rect>
+            <rect id="Rectangle-Copy-3" x="0" y="24" width="48" height="9"></rect>
+            <ellipse id="Oval-1585" cx="164" cy="27" rx="27" ry="27"></ellipse>
+            <ellipse id="Oval-1585" stroke="#FFFFFF" cx="164" cy="33" rx="21" ry="21"></ellipse>
+            <circle id="Oval-1585" stroke="#FFFFFF" cx="164" cy="45" r="9"></circle>
+          </g>
+        </g>
+        <g id="Group" transform="translate(137.000000, 0.000000)"></g>
+      </g>
+    </svg>
+  </div>
 </div>
 
 
-</div>
+
+
+
+</div><div class="CDB-Legend-item" style="display: none;">
+</div></div>
 
 </div>
 <div id="subinfobox"></div>
@@ -188,6 +252,73 @@
     <span class="title" id="title">Title</span>
     <span class="author"><strong id="author">By Name using</strong> <a href="http://cartodb.github.io/odyssey.js/">Odyssey.js</a><span>
   </div>
+ <div id="md_template" style="display:none;">```
+-baseurl: "http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png"
+-title: "Internet User Classification 2018"
+-author: "Geographic Data Science Lab"
+-vizjson: "http://gdsl.carto.com/u/alexandros/api/v2/viz/1f825ac9-5202-4ea2-af2b-e3090fd174ea/viz.json"
+```
+
+#Internet User Classification (IUC)
+```
+- center: [55.207410, -3.000591]
+- zoom: 6
+```
+
+IUC tells us about how people living in different parts of Great Britain use the Internet, and is built from a range of consumer, survey and open data collected by the ESRC CDRC.
+
+This is an example of a geodemographic classification, and groups areas into categories based upon their most salient characteristics. It follows the old adage, "birds of a feather flock together", or in other words; you are where you live
+
+
+#Constrained by Infrastructure
+```
+- center: [53.9352019,-1.0681778]
+- zoom: 12
+```
+
+Now, why might this be? Where we live can for example impact how fast the Internet is; and in rural areas it is often the case that the Internet can be slower, either because houses are often further away from their local telephone exchange or mobile broadband signal strength can be weaker. 
+
+Here we see York, with a mix of different IUC groups, however, in the Rural areas that surround it, the areas are defined by the label "Constained by Infrastructure". In these areas, it is difficult to engage with the Internet in any meaningful way irrespective of demand. 
+
+
+#Engagement by the sea?
+```
+- center: [51.7918,1.1457]
+- zoom: 13
+```
+However, in some places, even though the infrastructure does not provide a constraint, those living within these areas do not generally see the necessity of the Internet. Many of these areas are found in seaside locations around the British coast such as this example in the SE of England showing Clacton on Sea; with the majority of the area in the groups "Not a necessity" or "Elderly and Reluctant to Engage".
+
+![Clacton on Sea](https://upload.wikimedia.org/wikipedia/commons/1/13/Clacton-on-sea.jpg)
+
+#Seaside Surfers...
+```
+- center: [50.842941,-0.131312]
+- zoom: 13
+```
+Although not all seaside locations are like this, and in some more affluent coastal areas there are strong patterns of engagement. This is a map of Brighton on the South Coast of England, and a very large part of the city consists of areas classified as either "e-Experts" or "e-Professionals".
+
+![Brighton Pier](https://upload.wikimedia.org/wikipedia/commons/e/e0/Brighton_Pier_at_dusk.jpg)
+
+
+
+#Engaging Students
+```
+- center: [53.4544,-2.2247]
+- zoom: 16
+```
+
+ Another driver of Internet engagement relates to demography, and in particular, we tend to find that younger populations are more engaged than those who are elderly. This map shows an area within Greater Manchester in the NW of England. A popular area for student housing buffers the arterial road running from the University to Fallowfield, and is lined by areas labeled as "e-Cultural Creators".
+
+#Young and Uncommitted...
+```
+- center: [53.456, -2.200]
+- zoom: 16
+```
+
+ However, this is not always the case. Just to the East of these highly engaged students is another area called *Longsight*, where although the population is younger, they are much less committed users, despite being in such close proximity.
+ 
+
+</div>
 
   <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
   <script src="../dist/odyssey.js" charset="UTF-8"></script>
@@ -267,16 +398,25 @@
       return t;
     }
 
+
+
     O.Template({
       init: function() {
                 console.log("init");
         var seq = O.Triggers.Sequential();
-        var baseurl = this.baseurl = 'https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png';
+        // var baseurl = this.baseurl = 'https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png';
         var map = this.map = L.map('map').setView([0, 0.0], 4);
-        var basemap = this.basemap = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-          attribution: 'data OSM - map CartoDB'
-        }).addTo(map);
+        // var basemap = this.basemap = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        //   attribution: 'data OSM - map CartoDB'
+        // }).addTo(map);
 
+var basemap = this.basemap = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
+          attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  subdomains: 'abcd',
+  minZoom: 0,
+  maxZoom: 20,
+  ext: 'png'
+}).addTo(map);
 
         // enanle keys to move
         O.Keys().on('map').left().then(seq.prev, seq)
@@ -286,6 +426,7 @@
         click(document.querySelectorAll('.prev')).then(seq.prev, seq)
 
         var slides = O.Actions.Slides('slides');
+
         var story = O.Story()
 
         this.story = story;
@@ -293,11 +434,13 @@
         this.slides = slides;
         this.progress = O.UI.DotProgress('dots').count(0);
 
+                console.log(slides);
+
+
       },
 
       update: function(actions) {
         var self = this;
-
         if (!actions.length) return;
 
         this.story.clear();
@@ -320,9 +463,9 @@
 
         if (actions.global.vizjson && !this.cartoDBLayer) {
           if (!this.created) { // sendCode debounce < vis loader
-            cdb.vis.Loader.get(actions.global.vizjson, function(vizjson) {
+            cdb.vis.Loader.get('http://gdsl.carto.com/u/alexandros/api/v2/viz/1f825ac9-5202-4ea2-af2b-e3090fd174ea/viz.json', function(vizjson) {
               self.map.fitBounds(vizjson.bounds);
-               console.log(self.map);
+               // console.log(self.map);
               cartodb.createLayer(self.map, vizjson)
                 .done(function(layer) {
                   self.cartoDBLayer = layer;
@@ -330,12 +473,16 @@
                   var sublayer = layer.getSubLayer(0),
                       layer_name = layer.layers[0].options.layer_name,
                       filter = actions.global.cartodb_filter ? " WHERE "+actions.global.cartodb_filter : "";
-
                    // sublayer.setSQL("SELECT * FROM "+layer_name+filter)
                   self.map.addLayer(layer);
                  var labelLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
-          attribution: 'data OSM - map CartoDB'
-        }).addTo(self.map);
+          attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  subdomains: 'abcd',
+  minZoom: 0,
+  maxZoom: 20,
+   opacity: 0.8,
+  ext: 'png'
+}).addTo(self.map);
                          labelLayer.bringToFront();
 
                   self._resetActions(actions);
@@ -410,22 +557,21 @@
   crossorigin="anonymous"></script>
 <script>
     var iuc_desc = {
-  "Novice Users": "This group represents areas where the majority of people have limited or no interaction with the Internet. They are most likely located outside city centres and close to the suburbs or semi-rural areas. The underlying population are fairly average in characteristics, albeit with higher levels of people less skilled and working in blue-collar occupations. People living within these areas are rarely online, and most commonly only reporting use of once a week or less. The probability of having access to broadband is as expected well below average, and for those online, there is mild preference for access via their smartphones. While engagement is limited, the Internet is typically used for online shopping, gaming or social networks. ",
-  "Aging Late Majorities": "This group represents areas with ageing populations that are predominantly white British, retired and relatively affluent, however, their engagement to the Internet can be considered fairly average. When they do use the Internet, their main access method appears to be via a personal computer at home, and despite being infrequent users, they are adept enough to use the Internet for information seeking, financial services and online shopping (but less so for social networks, streaming or gaming). These areas are usually located in semi-rural and coastal regions, where infrastructure provision is limited.",
-  "Elderly and Reluctant to Engage": "This group represented areas where the majority of residents are elderly, white British and retired populations; located within semi-rural areas. This particular group however exhibits a much more limited engagement with the Internet. They have a higher than average population ratio of people without access, and for those that are engaged online they do so very infrequently. Their preferred method seems to be via a home computer and much less so using a mobile device. The limited online behaviour focuses on online shopping and information seeking, with very low participation in social network, gaming or media streaming.",
-  "Constrained by Infrastructure": "This group represents mainly rural and semi-rural areas at the city fringe. Their use of the Internet is constrained by poor levels of infrastructure; although a large number of them are experienced Internet users, and have relatively high levels of online shopping activity: particularly for groceries, which may also be a factor of limited bricks-and-mortar retail provision within these areas. The population tends to be late middle aged or elderly, and as might be expected, have a high percentage of retired individuals alongside those who own their home. The preferred method of engagement with the Internet is usually through a personal computer located at home and there is less prevalent mobile access. In terms of online behaviour, besides shopping, people within these areas use the Internet for information-seeking or online banking but less so for social networks or gaming, indicating their perception of the Internet is more that of a necessary tool than for entertainment.",
-  "Young and Uncommitted": "This group are mainly found at the periphery of city centres and are composite of high concentrations of relatively young and multicultural populations. There is a mixture of students and young urbanites living within these areas, often in shared households, that usually experience some level of material deprivation. Their level of Internet engagement is generally average, but with more inclination towards social media, communications and streaming than online shopping; they also have a relatively high proportion of population going online at a public place. Access to broadband is average, possibly due to the reduced costs of access associated with Internet sharing. ",
-  "e-Mix": "This group represents the most average profile of Internet engagement. People living within these express very close to average diversity in terms of age structure, ethnicity and household composition, indicating a mixture of socio-economic profiles. The group is usually located at the periphery of urban regions; and such areas could also represent transitional neighbourhoods. Their level of engagement is average across all attributes, characterising the typical user.",
-  "e-Experts": "The e-experts group have high levels of Internet engagement, although represent more mature populations of young urban professionals, typically aged between 25 and 34. They are experienced users and engage with the Internet daily in a variety of ways. They do some shopping online, particularly for more expensive items, and they use a variety devices and methods to access the Internet. The ethnic diversity of this group is significantly high, with a very strong presence of white, non-British populations with very high qualification levels. They also have the highest level of Internet access through their working environment. This group tend to be found at the periphery of city centres or affluent suburbs.",
-  "e-Cultural Creators": "This group has high levels of Internet engagement, particularly regarding social networks, communication, streaming and gaming, but relatively low levels of online shopping, besides groceries. They are new but very active users, with a very high proportion of the population engaging on a daily basis. The age structure of this group is young, typically aged between 18 to 24, and with a strong presence of multicultural and student populations. This group is mainly located close to the city centre where infrastructure accessibility, such as cable broadband, is sufficient. They have a well-above average ownership of laptop devices, and an above average Internet access via mobile and at public places.",
-  "Multicultural e-Withdrawn": "This group represents areas with populations of high ethnic diversity and who are some of those least engaged with the Internet. Typically located within urban areas, residents there are generally young with a well-above-average unemployment rate and experiencing some sort of material deprivation. Houses are often crowded, with multiple occupancy of 5 or more members. The groupÍs online behaviour is very limited across all attributes, except social networks and gaming (perhaps reflecting those families with children), with those still however below average. ",
-  "Not a Necessity": "This group is mainly characterised by individuals who are the least engaged with the Internet. Their geography is expressed by areas that are associated with those more deprived neighbourhoods of urban regions. The socio-economic profile of the population is characterised by less affluent white British individuals; and it has the highest rate of unemployment and social housing among all other groups. The group appears to have the highest ratio of people that only recently had access, or have access but never engage with the Internet. It also expresses the lowest rates of engagement in terms of online shopping, information seeking and financial services, as well as the lowest rate in terms of online access via a mobile device. It is possible that many people within this group have opted out of online engagement, either because it is considered unnecessary or because of economic reasons.",
-  "e-Professionals": "The e-Professionals group represents affluent families, usually located within low-density suburbs, with populations of mainly middle-aged and highly qualified professionals. They are more likely to be experienced users of the Internet and with the second highest levels of access at work after the e-Experts users. They engage with the Internet using multiple devices and in a variety of ways."
+  "e-Cultural Creators": "This Group has high levels of Internet engagement, particularly regarding social networks, communication, streaming and gaming, but relatively low levels of online shopping, besides groceries. They are new but very active users, with a very high proportion of the population engaging on a daily basis. Their online behaviour can be explained by a demographic base that suggests a transitionary nature; the age structure of the Group is young, typically aged between 18 to 24, and with a strong presence of multicultural and student populations. They have a well-above average ownership of laptop devices, and an above average Internet access via mobile and at public places. Geographically, this Group is mainly located within the proximity of Higher Education Institutes or close to the city centre where infrastructure accessibility, such as cable broadband, is sufficient. They have a well-above average ownership of laptop devices, and an above average Internet access via mobile and at public places.",
+  "e-Expertise": "The e-Expertise Group have high levels of Internet engagement, and comprises fairly mature populations of young urban professionals, typically aged between 25 and 34. They are experienced users and engage with the Internet daily and in a variety of settings. They do some shopping online, particularly for more expensive items, and they use a variety of devices and methods to access the Internet. This Group is ethnically diverse, with a very strong representation of white, non-British populations. They are well-qualified and have very high availability of Internet at work. This Group tends to be found at in residential areas abutting city centres or within affluent suburbs.",
+  "e-Professionals": "The e-Professionals Group represents affluent families, usually located within low-density suburbs, with populations of mainly middle-aged and highly qualified professionals. They are more likely to be experienced users of the Internet and have the second highest levels of Internet access at work after the e-Experts users. They engage with the Internet using multiple devices and in a variety of ways, such as information seeking, shopping and services but relatively less so for communication and entertainment.",
+  "Youthful Urban Fringe": "This Group often resides at the edge of city centres and are often young and drawn from ethnic minorities. These include a mixture of students and other young urbanites living in informal households, often within materially deprived communities. The levels of Internet engagement are average over-all, with high levels of social media usage but low patronage of online retailing. Internet usage in public places is high. Access to broadband is average, possibly due to other modes of access.",
+  "e-Mainstream": "This Group exhibit modal Internet user characteristics but are drawn from a wide range of social echelons as defined using conventional socioeconomic data. Geographically, the Group is usually located at the periphery of urban areas or in transitional neighbourhoods. Their level of engagement is average across most attributes, characterising the typical user.",
+  "e-Rational Utilitarians": "Comprising mainly rural and semi-rural areas at the city fringe, high demand for Internet services by members of this Group is constrained by poor infrastructure. Users undertake online shopping, particularly for groceries, perhaps because of the limited offer from ‘bricks and mortar’ retailers. Users tend to be late middle aged or elderly, and as might be expected, include a high percentage of retired home owners. The preferred method of engagement with the Internet is personal computers located at home and there are low levels of mobile access. In addition to shopping, users search for information or access online banking rather than engage with social networks or gaming: the Internet is used as a utility rather than a conduit for entertainment.",
+  "Novice Users": "Many individuals have limited or no interaction with the Internet. They tend to reside outside city centres and close to the suburbs or semi-rural areas. Members of this Group have few distinctive characteristics in conventional socioeconomic terms, albeit higher levels of employment in semi-skilled and blue-collar occupations. Individuals are rarely online, and most commonly only report use once a week or less. Access to broadband is well below average, and for those online, there is mild preference for access via smartphones. The Internet is typically used for online shopping, gaming or social networks.",
+  "Settled Offline Communities": "Members of this Group are ageing and predominantly White British, retired and relatively affluent. They make average use of the Internet, typically using a personal computer at home. Despite being infrequent users, they are adept enough to use the Internet for information seeking, financial services and online shopping (but less so for social networks, streaming or gaming). Members of this Group typically reside in semi-rural or coastal regions, where infrastructure provision is often limited.",
+  "Elderly and Unengaged": "Most members of this Group are elderly, White British and retired. They tend to reside in semi-rural areas. They undertake only limited engagement with the Internet, and may have only rare access or indeed no access to it at all. Any online behaviour tends to be through home computers rather than mobile devices, and is focused upon online shopping and information seeking rather than social networking, gaming or media streaming.",
+  "e-Withdrawn": "This Group is mainly characterised by individuals who are the least engaged with the Internet. Their geography is expressed by areas that are associated with those more deprived neighbourhoods of urban regions. The socio-economic profile of the population is characterised by less affluent white British individuals or areas of high ethnic diversity; and it has the highest rate of unemployment and social housing among all other Groups. The e-Withdrawn Group appears to have the highest ratio of people that don’t have access, or have access but never engage with the Internet. It also expresses the lowest rates of engagement in terms of online shopping, information seeking and financial services, as well as the lowest rate in terms of online access via a mobile device. It is possible that many people within this Group have opted out of online engagement, either because it is considered unnecessary or because of economic reasons.",
 };
 
-      $( ".legendtext" ).click(function() {
-        console.log( $( this ).html());
-        $("#subinfobox").html( "<h2><b>"+$( this ).html()+"</b></h2><br/>"+iuc_desc[$( this ).html()]);
+      $( ".Legend-categoryListItem" ).click(function() {
+        var text = $( this ).text().trim();
+        $("#subinfobox").html( "<h2><b>"+text+"</b></h2><br/>"+iuc_desc[text]);
         $("#subinfobox").show();
       });
     </script> 

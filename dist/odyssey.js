@@ -963,6 +963,9 @@ var Template = function(template) {
     var origin = location.pathname.split('/')[1];
 
     Template.Storage.load(function(md) {
+                  // console.log(document.getElementById('md_template').text);
+            md = document.getElementById('md_template').textContent;
+
       template.update(actionsFromMarkdown(md));
     });
   }
@@ -976,6 +979,7 @@ Template.Storage = {
 
   load: function(done) {
     if (document.getElementById('md_template')) {
+
       done(document.getElementById('md_template').text);
       return;
     }
