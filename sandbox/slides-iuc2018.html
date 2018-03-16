@@ -259,35 +259,32 @@
 -vizjson: "https://gdsl.carto.com/u/alexandros/api/v2/viz/1f825ac9-5202-4ea2-af2b-e3090fd174ea/viz.json"
 ```
 
-#Internet User Classification (IUC)
+#Internet User Classification (IUC) 2018
 ```
 - center: [55.207410, -3.000591]
 - zoom: 6
 ```
 
-IUC tells us about how people living in different parts of Great Britain use the Internet, and is built from a range of consumer, survey and open data collected by the ESRC CDRC.
-
-This is an example of a geodemographic classification, and groups areas into categories based upon their most salient characteristics. It follows the old adage, "birds of a feather flock together", or in other words; you are where you live
+The IUC is a typology of neighbourhoods. The patterns it expresses tells us about how people living in different parts of Great Britain interact with the Internet. The IUC is built from a range of consumer, survey and open data collected by the ESRC CDRC, built into a geodemographic classification. Geodemographics group individuals into categories based upon the most salient characteristics of the neighbourhood they live in. It follows the old adage, "birds of a feather flock together", or in other words; you are where you live.
 
 
-#Constrained by Infrastructure
+#e-Rational Utilitarians
 ```
 - center: [53.9352019,-1.0681778]
 - zoom: 12
 ```
 
-Now, why might this be? Where we live can for example impact how fast the Internet is; and in rural areas it is often the case that the Internet can be slower, either because houses are often further away from their local telephone exchange or mobile broadband signal strength can be weaker. 
+Now, why might different populations have different online behaviours? For the most part, demographic factors paly the most important in online engagement, such as population age or ethnicity. Different age groups prefer to live at different parts of the country, for instance young people prefer to live close to the city centre, and elderly people in rural and semi-rural areas.
+Engagement can also be by influenced by where we live. Location can for example impact how fast the Internet is; and in rural areas it is often the case that the Internet can be slower, either because houses are often further away from their local telephone exchange or mobile broadband signal strength can be weaker.  
 
-Here we see York, with a mix of different IUC groups, however, in the Rural areas that surround it, the areas are defined by the label "Constained by Infrastructure". In these areas, it is difficult to engage with the Internet in any meaningful way irrespective of demand. 
-
+Here we see York, with a mix of different IUC groups. In the Rural areas that surround it, the areas are defined by the label "e-Rational Utilitarians". In these areas, it is difficult to engage with the Internet in any meaningful way irrespective of demand. On the other hand, rural residents are much more keen in using the internet for the services it provides, such as e-banking and online shopping, than entertainment and communication.
 
 #Engagement by the sea?
 ```
 - center: [51.7918,1.1457]
 - zoom: 13
 ```
-However, in some places, even though the infrastructure does not provide a constraint, those living within these areas do not generally see the necessity of the Internet. Many of these areas are found in seaside locations around the British coast such as this example in the SE of England showing Clacton on Sea; with the majority of the area in the groups "Not a necessity" or "Elderly and Reluctant to Engage".
-
+However, in some places, even though the infrastructure does not provide a constraint, those living within these areas do not generally see the necessity of the Internet. Many of these areas are found in seaside locations around the British coast such as this example in the SE of England showing Clacton on Sea; with the majority of the area in the groups "Elderly and Unengaged" or "e-Withdrawn".
 ![Clacton on Sea](https://upload.wikimedia.org/wikipedia/commons/1/13/Clacton-on-sea.jpg)
 
 #Seaside Surfers...
@@ -295,7 +292,7 @@ However, in some places, even though the infrastructure does not provide a const
 - center: [50.842941,-0.131312]
 - zoom: 13
 ```
-Although not all seaside locations are like this, and in some more affluent coastal areas there are strong patterns of engagement. This is a map of Brighton on the South Coast of England, and a very large part of the city consists of areas classified as either "e-Experts" or "e-Professionals".
+Although not all seaside locations are like this, and in some more affluent coastal areas there are strong patterns of engagement. This is a map of Brighton on the South Coast of England, and a very large part of the city consists of areas classified as either "e-Expertise" or "e-Professionals".
 
 ![Brighton Pier](https://upload.wikimedia.org/wikipedia/commons/e/e0/Brighton_Pier_at_dusk.jpg)
 
@@ -307,17 +304,31 @@ Although not all seaside locations are like this, and in some more affluent coas
 - zoom: 16
 ```
 
- Another driver of Internet engagement relates to demography, and in particular, we tend to find that younger populations are more engaged than those who are elderly. This map shows an area within Greater Manchester in the NW of England. A popular area for student housing buffers the arterial road running from the University to Fallowfield, and is lined by areas labeled as "e-Cultural Creators".
+As aforementioned, another driver of Internet engagement relates to demography, and in particular, we tend to find that younger populations are more engaged than those who are elderly. This map shows an area within Greater Manchester in the NW of England. A popular area for student housing buffers the arterial road running from the University to Fallowfield, and is lined by areas labeled as "e-Cultural Creators".
 
-#Young and Uncommitted...
+#Youthful Urban Finge
 ```
 - center: [53.456, -2.200]
 - zoom: 16
 ```
 
- However, this is not always the case. Just to the East of these highly engaged students is another area called *Longsight*, where although the population is younger, they are much less committed users, despite being in such close proximity.
- 
+However, this is not always the case. Just to the East of these highly engaged students is another area called Longsight, where although the population is younger, they are much less committed users, despite being in such close proximity. Socio-economic characteristics also play an important role in online engagement.
 
+#New Digital Divide (1)
+```
+- center: [52.201682,0.125997]
+- zoom: 12
+```
+
+The socio-economic characteristics of individuals, such as their education and income seem to play an important role in engagement patterns. Cambridge is a good example on how patterns of engagement in high-income areas, where high-tech businesses and technology incubators have developed around the city. The core is usually highly engaged, a characterized by the high concentration of students (e-Cultural Creators), and expanding outwards with e-Expertise groups in the periphery and e-Professional groups in the outer suburbs.
+
+#New Digital Divide (2)
+```
+- center: [53.7956,-1.6428]
+- zoom: 13
+```
+
+However, classes that are barely visible in the South are much more pronounced in the North, such as in Leeds and Bradford. While high engagement levels in urban cores is ubiquitous, the periphery of the city centre expresses a completely different pattern, with many areas that can be generally characterised as unengaged. The dichotomy between urban cores and the rest of residential areas is much more rigid; while mature internet users such as the e-professionals are expanding towards rural or semi-rural areas.
 </div>
 
   <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
@@ -469,10 +480,20 @@ var basemap = this.basemap = L.tileLayer('https://{s}.basemaps.cartocdn.com/ligh
               cartodb.createLayer(self.map, vizjson)
                 .done(function(layer) {
                   self.cartoDBLayer = layer;
-
+                  
                   var sublayer = layer.getSubLayer(0),
                       layer_name = layer.layers[0].options.layer_name,
                       filter = actions.global.cartodb_filter ? " WHERE "+actions.global.cartodb_filter : "";
+
+
+                       var nolabelLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+          attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  subdomains: 'abcd',
+  minZoom: 0,
+  maxZoom: 20,
+   opacity: 0.8,
+  ext: 'png'
+}).addTo(self.map);
                    // sublayer.setSQL("SELECT * FROM "+layer_name+filter)
                   self.map.addLayer(layer);
                  var labelLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
@@ -480,7 +501,7 @@ var basemap = this.basemap = L.tileLayer('https://{s}.basemaps.cartocdn.com/ligh
   subdomains: 'abcd',
   minZoom: 0,
   maxZoom: 20,
-   opacity: 0.8,
+   opacity: 1,
   ext: 'png'
 }).addTo(self.map);
                          labelLayer.bringToFront();
